@@ -1,0 +1,482 @@
+/* Universal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 0 0 20px 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.header h1 {
+  background: linear-gradient(90deg, #4d85d2, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Search */
+.search-container {
+  position: relative;
+}
+
+#searchInput {
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  width: 240px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(0, 255, 200, 0.15);
+}
+
+#searchInput:focus {
+  width: 420px;
+  height: 55px;
+  border-color: #1a8de6;
+  box-shadow: 0 0 10px #4eb4f4, 0 0 20px #0575e6;
+}
+/* Search Button */
+#searchBtn {
+  margin-left: 0.6rem;
+  padding: 0.65rem 1.2rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ffb300, #ff6f00, #ff4500);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+}
+
+#searchBtn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #ff4500, #ffb300);
+  box-shadow: 0 0 25px #ffae00, 0 0 35px #ff4500;
+}
+
+
+/* Layout */
+.main-container {
+  display: flex;
+  gap: 2rem;
+  width: 90%;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.main-content {
+  flex: 3;
+}
+
+/* Loader */
+.loader {
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #00f260;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ✅ User Grid – exactly 3 cards per row */
+.user-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+/* Cards */
+.user-card {
+  background: linear-gradient(135deg, rgba(0,242,96,0.15), rgba(5,117,230,0.15));
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 300px;
+}
+
+.user-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: linear-gradient(135deg, rgba(0,242,96,0.25), rgba(5,117,230,0.25));
+  box-shadow: 0 0 20px #00f260, 0 0 30px #0575e6;
+}
+
+.user-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #00f260;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+.user-card:hover img {
+  transform: scale(1.1);
+}
+
+.user-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #fff;
+}
+
+.user-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Comment Section */
+.comment-section {
+  width: 320px;
+  height: 340px;
+  background: linear-gradient(135deg, rgba(0,255,200,0.05), rgba(0,123,255,0.05));
+  backdrop-filter: blur(12px);
+  padding: 1rem;
+  border-radius: 15px;
+  border: 2px solid rgba(0,255,200,0.2);
+  box-shadow: 0 0 10px rgba(0,255,200,0.2);
+  transition: all 0.3s ease;
+}
+.comment-section:hover {
+  box-shadow: 0 0 15px #00f260, 0 0 25px #0575e6;
+}
+
+.comment-section h2 {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #00f260;
+}
+
+#commentBox {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  border: none;
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.15);
+  color: white;
+  resize: none;
+}
+
+#submitComment {
+  width: 100%;
+  margin-top: 0.6rem;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#submitComment:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #0575e6, #00f260);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.4s ease;
+  z-index: 100;
+}
+.modal.hidden {
+  display: none;
+}
+
+.animate-modal {
+  animation: popup 0.4s ease;
+}
+@keyframes popup {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-content {
+  background: linear-gradient(135deg, rgba(0,242,96,0.15), rgba(5,117,230,0.15));
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 380px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0,255,200,0.4);
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  opacity: 0.7;
+}
+
+/* Responsive (2-column and 1-column) */
+@media (max-width: 1024px) {
+  .user-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .comment-section {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .user-container {
+    grid-template-columns: 1fr;
+  }
+  #searchInput {
+    width: 150px;
+  }
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/*------extra*--------
+/* Header / Hero Section */
+.header {
+  display: flex;
+  height: 40vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(45, 80, 160, 0.3), rgba(15, 32, 47, 0.95));
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.15);
+  border-radius: 0 0 30px 30px;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 4.9rem;
+  background: linear-gradient(90deg, #e2e81d, #e6d705);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.8rem;
+}
+
+.hero-content p {
+  font-size: 1.8rem;
+  color: #ddd;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+.get-started-btn {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border: none;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 20px rgba(100, 100, 255, 0.3);
+}
+
+.get-started-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.6), 0 0 45px rgba(5, 117, 230, 0.6);
+}
+
+.controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+/*------video----------*/
+/* ===== Hero Video Background ===== */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  border-radius: 0 0 30px 30px;
+}
+
+/* Optional overlay for dark tint */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 20, 40, 0.6); /* adjust darkness */
+  z-index: -1;
+  border-radius: 0 0 30px 30px;
+}
+
+/* Keep hero text and search above */
+.hero-content,
+.controls {
+  position: relative;
+  z-index: 2;
+}
+
+/* Adjust header so it positions elements properly */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+#paginationControls button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#paginationControls button:disabled {
+  background: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#paginationControls span {
+  color: #00f260;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* ===================== Hero Title Animation ===================== */
+.hero-content h1 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #eaff00;
+  animation: typing 3.5s steps(30, end), blink 0.8s step-end infinite alternate;
+  font-size: 4.9rem;
+  background: linear-gradient(90deg, #d1ea30, #dffc25, #ddff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(163, 19, 19, 0.7);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* ===================== Search Spark Typing Effect ===================== */
+@keyframes spark {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 200, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 200, 0, 0.8), 0 0 40px rgba(255, 100, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 200, 0, 0.3);
+  }
+}
+
+#searchInput.typing {
+  animation: spark 0.4s ease;
+}
+
+/* Add subtle glow around search bar when focused */
+#searchInput:focus {
+  width: 520px;
+  height: 55px;
+  border-color: #51ff00;
+  box-shadow: 0 0 15px #00d5ff, 0 0 30px #ede9e6;
+  background: rgba(255, 170, 0, 0.1);
+}
+
+
+.hero-section {
+  background: radial-gradient(circle at top, rgba(255, 170, 0, 0.25), rgba(0, 0, 0, 0.9));
+  background-size: 200% 200%;
+  animation: heroGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}

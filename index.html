@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="header hero-section">
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="frv2.mp4" type="video/mp4" />
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Your Gateway to the Future of Users</h1>
+    <p>Explore user details interactively and manage your dashboard with ease.</p>
+    <button id="getStartedBtn" class="get-started-btn">Get Started</button>
+  </div>
+
+  <div class="controls">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search user by name..." />
+      <button id="searchBtn">Search</button>
+    </div>
+  </div>
+</header>
+
+
+  <div class="main-container">
+    <main class="main-content">
+      <div id="loader" class="loader"></div>
+      <section id="userContainer" class="user-container"></section>
+    </main>
+
+    <aside class="comment-section">
+      <h2>💬 Leave a Comment</h2>
+      <textarea id="commentBox" placeholder="Type your comment here..."></textarea>
+      <button id="submitComment">Post Comment</button>
+    </aside>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content animate-modal">
+      <span class="close">&times;</span>
+      <h2 id="modalName"></h2>
+      <p id="modalEmail"></p>
+      <p id="modalCompany"></p>
+      <p id="modalAddress"></p>
+    </div>
+  </div>
+
+  <footer>© 2025 User Dashboard by Smilan</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
